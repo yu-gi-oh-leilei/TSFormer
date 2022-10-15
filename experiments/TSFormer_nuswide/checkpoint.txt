@@ -1,0 +1,1 @@
+exp1	python train.py --data nuswide --batch_size 16 --optimizer AdamW --lr 0.00001 --mode part --start_depth 1 --seed 1 --gpus 1
