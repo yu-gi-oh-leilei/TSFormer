@@ -1,7 +1,7 @@
 model: TSFormer
 data: voc2007
 seed: 1
-lr: 1e-05
+lr: 1.1e-05
 batch_size: 16
 mode: part
 optimizer: AdamW
@@ -28,8 +28,8 @@ label_path: data/voc2007/label.txt
 embed_path: data/voc2007/bert.npy
 ignore_path: data/voc2007/ignore.npy
 num_classes: 20
-exp_dir: experiments/TSFormer_voc2007/exp4
-log_path: experiments/TSFormer_voc2007/exp4/train.log
-ckpt_dir: experiments/TSFormer_voc2007/exp4/checkpoints
-ckpt_best_path: experiments/TSFormer_voc2007/exp4/checkpoints/best_model.pth
-ckpt_latest_path: experiments/TSFormer_voc2007/exp4/checkpoints/latest_model.pth
+exp_dir: experiments/TSFormer_voc2007/exp7
+log_path: experiments/TSFormer_voc2007/exp7/train.log
+ckpt_dir: experiments/TSFormer_voc2007/exp7/checkpoints
+ckpt_best_path: experiments/TSFormer_voc2007/exp7/checkpoints/best_model.pth
+ckpt_latest_path: experiments/TSFormer_voc2007/exp7/checkpoints/latest_model.pth

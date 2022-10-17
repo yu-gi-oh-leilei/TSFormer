@@ -47,5 +47,5 @@ python evaluate.py --exp experiments/TSFormer_voc2007/exp1   # Pascal VOC 2007
 |  dataaset   | mAP  | ours |
 |  ---------  | ---- | ---- | 
 | VOC 2007    | 97.0 | 97.0 |
-| MS-COCO     | 88.9 |  -   |
-| NUS-WIDE    | 69.3 |  -   |
+| MS-COCO     | 88.9 | 88.9 |
+| NUS-WIDE    | 69.3 | 69.3 |
