@@ -1,7 +1,7 @@
 ## Two-Stream Transformer for Multi-Label Image Classification
 
 ### Introduction
-Reproduce PyTorch implementation of the paper "Two-Stream Transformer for Multi-Label Image Classification" ACM MM 2022
+Reproduce PyTorch implementation of the paper "Two-Stream Transformer for Multi-Label Image Classification" ACM MM 2022 [paper](https://dl.acm.org/doi/abs/10.1145/3503161.3548343)
 ![alt tsformer](src/tsformer.png)
 
 ### Data Preparation
@@ -49,3 +49,13 @@ python evaluate.py --exp experiments/TSFormer_voc2007/exp1   # Pascal VOC 2007
 | VOC 2007    | 97.0 | 97.0 |
 | MS-COCO     | 88.9 | 88.9 |
 | NUS-WIDE    | 69.3 | 69.3 |
+
+# BibTex
+```
+@inproceedings{zhu2022two,
+  title={Two-Stream Transformer for Multi-Label Image Classification},
+  author={Zhu, Xuelin and Cao, Jiuxin and Ge, Jiawei and Liu, Weijia and Liu, Bo},
+  booktitle={Proceedings of the 30th ACM International Conference on Multimedia},
+  pages={3598--3607},
+  year={2022}
+}
