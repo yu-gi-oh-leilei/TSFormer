@@ -1,0 +1,119 @@
+model training time: 2022-10-29 19:03:56
+model configuration: 
+Namespace(
+    model: Vit
+    data: voc2007
+    seed: 123
+    lr: 0.0001
+    batch_size: 16
+    mode: part
+    optimizer: AdamW
+    lr_scheduler: ReduceLROnPlateau
+    weight_decay: 0.0001
+    start_depth: 4
+    img_size: 448
+    num_heads: 1
+    embed_type: bert
+    loss_fn: bce
+    gamma_pos: 0.0
+    gamma_neg: 1.0
+    clip: 0.05
+    max_epoch: 100
+    warmup_epoch: 2
+    topk: 3
+    threshold: 0.5
+    pretrained: True
+    restore_exp: None
+    gpus: 0
+    train_path: data/voc2007/train.txt
+    test_path: data/voc2007/test.txt
+    label_path: data/voc2007/label.txt
+    embed_path: data/voc2007/bert.npy
+    ignore_path: data/voc2007/ignore.npy
+    num_classes: 20
+    exp_dir: experiments/Vit_voc2007/exp6
+    log_path: experiments/Vit_voc2007/exp6/train.log
+    ckpt_dir: experiments/Vit_voc2007/exp6/checkpoints
+    ckpt_best_path: experiments/Vit_voc2007/exp6/checkpoints/best_model.pth
+    ckpt_latest_path: experiments/Vit_voc2007/exp6/checkpoints/latest_model.pth
+)
+Compose(
+    RandomHorizontalFlip(p=0.5)
+    RandomResizedCrop(size=(448, 448), scale=(0.7, 1.0), ratio=(0.75, 1.3333), interpolation=bilinear)
+    Random Augment Policy
+    Resize(size=(448, 448), interpolation=bilinear, max_size=None, antialias=None)
+    ToTensor()
+)
+Compose(
+    Resize(size=(448, 448), interpolation=bilinear, max_size=None, antialias=None)
+    ToTensor()
+)
+Resized position embedding: torch.Size([1, 197, 768]) to torch.Size([1, 785, 768])
+Position embedding grid-size from [14, 14] to (28, 28)
+total parameters: 103062887
+TRAIN [epoch 0] loss: 0.722222 lr:0.0000000 time:4.3892
+TRAIN [epoch 0] loss: 0.597052 lr:0.0000008 time:0.4095
+TRAIN [epoch 0] loss: 0.276906 lr:0.0000017 time:0.4175
+TRAIN [epoch 0] loss: 0.241792 lr:0.0000025 time:0.4189
+TRAIN [epoch 0] loss: 0.227866 lr:0.0000033 time:0.4207
+TRAIN [epoch 0] loss: 0.206975 lr:0.0000041 time:0.4212
+TRAIN [epoch 0] loss: 0.162069 lr:0.0000050 time:0.4222
+Validation [epoch 0] mAP: 0.4220
+TRAIN [epoch 1] loss: 0.161396 lr:0.0000058 time:0.4249
+TRAIN [epoch 1] loss: 0.139502 lr:0.0000066 time:0.4229
+TRAIN [epoch 1] loss: 0.083710 lr:0.0000075 time:0.4229
+TRAIN [epoch 1] loss: 0.075524 lr:0.0000083 time:0.4267
+TRAIN [epoch 1] loss: 0.060635 lr:0.0000091 time:0.4252
+TRAIN [epoch 1] loss: 0.029433 lr:0.0000099 time:0.4251
+Validation [epoch 1] mAP: 0.9012
+TRAIN [epoch 2] loss: 0.033555 lr:0.0000100 time:0.4212
+TRAIN [epoch 2] loss: 0.068290 lr:0.0000100 time:0.4229
+TRAIN [epoch 2] loss: 0.021989 lr:0.0000100 time:0.4247
+TRAIN [epoch 2] loss: 0.051354 lr:0.0000100 time:0.4253
+TRAIN [epoch 2] loss: 0.030112 lr:0.0000100 time:0.4217
+TRAIN [epoch 2] loss: 0.040047 lr:0.0000100 time:0.4208
+Validation [epoch 2] mAP: 0.9461
+TRAIN [epoch 3] loss: 0.054671 lr:0.0000100 time:0.4214
+TRAIN [epoch 3] loss: 0.029479 lr:0.0000100 time:0.4262
+TRAIN [epoch 3] loss: 0.047763 lr:0.0000100 time:0.4212
+TRAIN [epoch 3] loss: 0.019962 lr:0.0000100 time:0.4240
+TRAIN [epoch 3] loss: 0.027167 lr:0.0000100 time:0.4208
+TRAIN [epoch 3] loss: 0.027756 lr:0.0000100 time:0.4211
+Validation [epoch 3] mAP: 0.9544
+TRAIN [epoch 4] loss: 0.030738 lr:0.0000100 time:0.4203
+TRAIN [epoch 4] loss: 0.030661 lr:0.0000100 time:0.4214
+TRAIN [epoch 4] loss: 0.024969 lr:0.0000100 time:0.4215
+TRAIN [epoch 4] loss: 0.039650 lr:0.0000100 time:0.4219
+TRAIN [epoch 4] loss: 0.013210 lr:0.0000100 time:0.4213
+TRAIN [epoch 4] loss: 0.010774 lr:0.0000100 time:0.4238
+Validation [epoch 4] mAP: 0.9572
+TRAIN [epoch 5] loss: 0.008259 lr:0.0000100 time:0.4208
+TRAIN [epoch 5] loss: 0.005383 lr:0.0000100 time:0.4216
+TRAIN [epoch 5] loss: 0.016119 lr:0.0000100 time:0.4248
+TRAIN [epoch 5] loss: 0.010829 lr:0.0000100 time:0.4213
+TRAIN [epoch 5] loss: 0.014487 lr:0.0000100 time:0.4217
+TRAIN [epoch 5] loss: 0.017090 lr:0.0000100 time:0.4213
+Validation [epoch 5] mAP: 0.9561
+TRAIN [epoch 6] loss: 0.011247 lr:0.0000100 time:0.4209
+TRAIN [epoch 6] loss: 0.019187 lr:0.0000100 time:0.4263
+TRAIN [epoch 6] loss: 0.016248 lr:0.0000100 time:0.4212
+TRAIN [epoch 6] loss: 0.012369 lr:0.0000100 time:0.4220
+TRAIN [epoch 6] loss: 0.013866 lr:0.0000100 time:0.4212
+TRAIN [epoch 6] loss: 0.010157 lr:0.0000100 time:0.4231
+Validation [epoch 6] mAP: 0.9542
+TRAIN [epoch 7] loss: 0.001592 lr:0.0000010 time:0.4213
+TRAIN [epoch 7] loss: 0.010923 lr:0.0000010 time:0.4216
+TRAIN [epoch 7] loss: 0.009256 lr:0.0000010 time:0.4216
+TRAIN [epoch 7] loss: 0.007950 lr:0.0000010 time:0.4217
+TRAIN [epoch 7] loss: 0.010378 lr:0.0000010 time:0.4214
+TRAIN [epoch 7] loss: 0.001010 lr:0.0000010 time:0.4221
+Validation [epoch 7] mAP: 0.9571
+TRAIN [epoch 8] loss: 0.008346 lr:0.0000010 time:0.4216
+TRAIN [epoch 8] loss: 0.005020 lr:0.0000010 time:0.4221
+TRAIN [epoch 8] loss: 0.002204 lr:0.0000010 time:0.4220
+TRAIN [epoch 8] loss: 0.004678 lr:0.0000010 time:0.4215
+TRAIN [epoch 8] loss: 0.003832 lr:0.0000010 time:0.4214
+TRAIN [epoch 8] loss: 0.002261 lr:0.0000010 time:0.4215
+Validation [epoch 8] mAP: 0.9563
+
+training over, best validation score: 0.957204563186326 mAP
