@@ -16,6 +16,29 @@ from .factory import register_model
 
 
 @register_model
+class Vit(nn.Module):
+    def __init__(self, pretrained, cfg, embed_dim=768, depth=12):
+        super().__init__()
+        self.img_encoder = vit_base_patch16_224_in21k(pretrained=pretrained, img_size=cfg.img_size)
+        self.cls_head = nn.Linear(embed_dim, cfg.num_classes)
+        self.num_prefix_tokens = 1
+        self.global_pool = 'avg'
+        # self.global_pool = 'cls_token'
+
+        
+    def forward(self, x):
+        batch_size = x.size(0)
+        vision_feats = self.img_encoder(x)
+        vision_feats = vision_feats[-1]
+        vision_feats = vision_feats.mean(dim=1)
+        # vision_feats = vision_feats[:, self.num_prefix_tokens:].mean(dim=1) if self.global_pool == 'avg' else vision_feats[:, 0]
+        logits = self.cls_head(vision_feats)
+        
+        if self.training:
+            return logits
+        return logits, self.global_pool
+
+@register_model
 class TSFormer(nn.Module):
     def __init__(self, pretrained, cfg, embed_dim=768, depth=12):
         super().__init__()
