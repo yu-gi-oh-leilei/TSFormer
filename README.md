@@ -44,11 +44,11 @@ python evaluate.py --exp experiments/TSFormer_voc2007/exp1   # Pascal VOC 2007
 ```
 
 ### Main Results
-|  dataset   | mAP  | ours |  baseline  |   baseline(our,large learning rate)  |
-|  ---------  | ---- | ---- | --------- |     ---------    |
-| VOC 2007    | 97.0 | 97.0 |  95.5     |      95.72       |
-| MS-COCO     | 88.9 | 88.9 |  85.9     |      87.04       |
-| NUS-WIDE    | 69.3 | 69.3 |  66.2     |      67.35       |
+|  dataset |  mAP | ours | baseline | baseline(our,large learning rate) |
+| :------: | :--: | :--: | :------: | :-------------------------------: |
+| VOC 2007 | 97.0 | 97.0 |   95.5   |               95.72               |
+|  MS-COCO | 88.9 | 88.9 |   85.9   |               87.04               |
+| NUS-WIDE | 69.3 | 69.3 |   66.2   |               67.35               |
 
 # BibTex
 ```
